@@ -89,6 +89,10 @@ a {
   text-align: center;
 }
 
+.announcement {
+  color: red;
+}
+
 form {
   padding: 10px 30px;
 }
