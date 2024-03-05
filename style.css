@@ -1,0 +1,111 @@
+@media screen and (width<500px) {
+  .flexparent {
+    flex-direction: column;
+  }
+}
+
+@media screen and (width<900px) {
+  img#cutePuppy {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+body {
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+table, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  /* padding: 10px; */
+  align-self: center;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  min-width: 100vw;
+  text-align: center;
+}
+
+p {
+  background-color: gainsboro;
+  width: fit-content;
+  padding: 10px;
+  align-self: center;
+}
+
+ul li {
+  font-style: italic;
+  font-size: medium;
+}
+
+li#listStyle {
+  color: lightblue;
+  font-weight: bolder;
+}
+
+.flexparent {
+  display: flex;
+  justify-content: center;
+}
+
+.flexchild {
+  flex: 1;
+  border: 1px;
+  color: white;
+  border-color: white;
+  text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.navHover:hover {
+  /* color: black; */
+  background-color: lightgray;
+}
+
+.inner_flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.coloredAndSize {
+  background-color: lightpink;
+  max-width: 60vw;
+}
+
+.textblock {
+  padding: 10px 30px;
+  text-align: center;
+}
+
+form {
+  padding: 10px 30px;
+}
+
+img.aboutmeImages {
+  max-width: 400px;
+  height: auto;
+}
+
+.responsiveImage {
+  display: flex;
+  justify-content: center;
+}
+
+.resume {
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}

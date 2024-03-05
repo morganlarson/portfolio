@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz #1</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <style>
+      table {
+        border: none;
+        margin-top: 50px;
+      }
+      td {
+        max-width: 150px;
+        border: none;
+      }
+      .button {
+        border-radius: 5px;
+        font-size: medium;
+        height: 50px;
+      }
+      input#submitBtn {
+        background-color: lightgreen;
+      }
+      input#resetBtn {
+        background-color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="inner_flex">
+      <header>
+      <h1>Morgan Larson's Portfolio</h1>
+      <div class="flexparent">
+        <div class="flexchild navHover">
+          <a href="home.html">Home</a>
+        </div>
+        <div class="flexchild navHover">
+          <a href="aboutme.html">About Me</a>
+        </div>
+        <div class="flexchild navHover">
+          <a href="projects.html">Projects</a>
+        </div>
+        <div class="flexchild navHover">
+          <a href="contact.html">Contact</a>
+        </div>
+        <div class="flexchild navHover">
+          <a href="feedback.html">Feedback</a>
+        </div>
+      </div>
+    </header>
+    <form>
+      <table>
+        <tr>
+          <td>
+            <label for="favDessert">Favorite Dessert:</label>
+          </td>
+          <td>
+            <input type="text" id="favDessert" name="favDessert">
+          </td>
+        </tr>
+        <!-- <br> -->
+        <tr>
+          <td>
+            <label for="timeForDessert">Best time for Dessert:</label>
+          </td>
+          <td>
+            <select name="timeForDessert" text="Morning">
+              <option>Breakfast</option>
+              <option>Lunch</option>
+              <option>Dinner</option>
+            </select>    
+          </td>
+        </tr>
+        
+        <!-- <br> -->
+        <tr>
+          <td>
+            <label for="bestPlaceToBuyDessert">Where is the best place to buy dessert?</label>
+          </td>
+          <td>
+            <textarea name="bestPlaceToBuyDessert" rows="6" cols="35"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" id="submitBtn" class="button" value="Submit Feedback">
+          </td>
+          <td>
+            <input type="reset" id="resetBtn" class="button" value="Reset Form">
+          </td>
+        </tr>
+      </table>
+    </form>
+    </div>
+  </body>
+</html>

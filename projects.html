@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Morgan Larson's Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <style>
+      a#github {
+        color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- this paragraph shows inheritance by being grey, which it inherited from style.css -->
+    <div class="inner_flex">
+      <header>
+        <h1>Morgan Larson's Portfolio</h1>
+        <div class="flexparent">
+          <div class="flexchild navHover">
+            <a href="home.html">Home</a>
+          </div>
+          <div class="flexchild navHover">
+            <a href="aboutme.html">About Me</a>
+          </div>
+          <div class="flexchild navHover">
+            <a href="projects.html">Projects</a>
+          </div>
+          <div class="flexchild navHover">
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="flexchild navHover">
+            <a href="feedback.html">Feedback</a>
+          </div>
+        </div>
+      </header>
+      <div class="textblock">
+        Check out my github! My username is morganlarson, but click <a id="github" href="https://github.com/morganlarson" target="_blank" rel="noopener noreferrer">here</a> to be brought right to it!
+        <br><br>
+        My resume is shown below:
+      </div>
+      <div class="resume">
+        <iframe src="./files/Official Resume (2).pdf" width="50%" height="100%"></iframe>
+      </div>
+    </div>
+  </body>
+</html>
