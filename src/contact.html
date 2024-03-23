@@ -9,7 +9,6 @@
     <style>
       .card-container {
         perspective: 1000px;
-        /* width: 100%; */
         width: 700px;
         height: 400px;
       }
@@ -37,7 +36,6 @@
       }
   
       .front {
-        /* border: 1px solid black; */
         width: 100%;
         height: 100%;
         background-color: white;
@@ -63,6 +61,10 @@
       label#missingInfo {
         color: red;
         font-size: small;
+      }
+
+      .submitBtn {
+        float: right;
       }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -126,7 +128,7 @@
                 <input hidden type="text" id="enterContactMethodInput" name="enterContactMethodInput"></input>
                 <br><br>
                 <label id="missingInfo"></label>
-                <input type="button" id="contactFormSubmit" value="Submit">
+                <input type="button" id="contactFormSubmit" class="submitBtn" value="Submit">
               </form>
             </div>
           </div>

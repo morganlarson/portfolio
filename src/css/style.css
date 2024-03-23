@@ -69,6 +69,7 @@ ul li {
   color: white;
   border-color: white;
   text-align: center;
+  padding: 5px;
 }
 
 a {
@@ -133,8 +134,7 @@ form {
   color: orange;
 }
 
-input#contactFormSubmit {
-  float: right;
+.submitBtn {
   border: none;
   border-radius: 5px;
   background-color: #04AA6D;
