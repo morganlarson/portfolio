@@ -3,10 +3,8 @@
   <head>
     <title>Contact Morgan</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <style>
       .card-container {
         perspective: 1000px;
@@ -33,7 +31,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 18px;
       }
   
       .front {
@@ -47,7 +44,6 @@
       .back {
         width: 100%;
         height: 100%;
-        border: 1px solid black;
         background-color: white;
         color: black;
         transform: rotateY(180deg);
@@ -71,7 +67,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
-    <div class="inner_flex">
+    <div class="innerFlex">
       <header>
         <h1>Morgan Larson's Portfolio</h1>
         <div class="flexparent">
@@ -104,7 +100,7 @@
               </p>
             </div>
             <div class="card-face back">
-              <form id="contactForm">
+              <form>
                 <label for="contactNameInput">Name *</label>
                 <br>
                 <input type="text" id="contactNameInput" name="contactNameInput"></input>
@@ -136,7 +132,6 @@
         </div>
       </div>
     </div>
-
     <script src="./app.js"></script>
   </body>
 </html>

@@ -4,15 +4,6 @@
   }
 }
 
-@media screen and (width<700px) {
-  .card-container {
-    width: 350px;
-    height: 650px;
-  }
-  
-
-}
-
 @media screen and (width<500px) {
   h1 {
     font-size: 24px;
@@ -30,7 +21,7 @@ body {
 }
 
 table, td {
-  border: 1px solid black;
+  border: none;
   border-collapse: collapse;
   align-self: center;
 }
@@ -81,7 +72,7 @@ a {
   cursor: pointer;
 }
 
-.inner_flex {
+.innerFlex {
   display: flex;
   flex-direction: column;
 }
@@ -105,22 +96,9 @@ a {
   text-align: center;
 }
 
-.announcement {
-  color: red;
-}
-
-form {
-  padding: 10px 30px;
-}
-
 .responsive {
   max-width: 100%;
   height: auto;
-}
-
-.responsiveImage {
-  display: flex;
-  justify-content: center;
 }
 
 .resume {
@@ -128,10 +106,6 @@ form {
   justify-content: center;
   /* min-width: 100vw; */
   min-height: 70vh;
-}
-
-.checked {
-  color: orange;
 }
 
 .submitBtn {

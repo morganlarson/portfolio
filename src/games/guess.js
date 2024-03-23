@@ -1,6 +1,4 @@
-// number guessing game js
 var numberToGuess = Math.floor(Math.random() * 100) + 1;
-
 var guessCount = 1;
 
 const previousGuesses = document.querySelector(".guesses");
@@ -38,6 +36,7 @@ guessSubmitBtn.onclick = (e) => {
       previousResult.textContent = "Too many guesses - Game Over!";
       lowOrHigh.textContent = "";
       guessSubmitBtn.disabled = true;
+      guessSubmitBtn.style.background = "lightgrey"
     } else {
       previousResult.textContent = "Wrong!";
       if (numberGuessed < numberToGuess) {
