@@ -6,49 +6,69 @@
     <meta name="viewport" content="width=device-width">
   </head>
   <body>
-    <!-- this paragraph shows inheritance by being grey, which it inherited from style.css -->
     <div class="inner_flex">
       <header>
         <h1>Morgan Larson's Portfolio</h1>
         <div class="flexparent">
-          <div class="flexchild navHover">
-            <a href="index.html">Home</a>
+          <div class="flexchild navHover" onclick="location.href='index.html'">
+            Home
           </div>
-          <div class="flexchild navHover">
-            <a href="aboutme.html">About Me</a>
+          <div class="flexchild navHover" onclick="location.href='aboutme.html'">
+            About Me
           </div>
-          <div class="flexchild navHover">
-            <a href="projects.html">Projects</a>
+          <div class="flexchild navHover" onclick="location.href='projects.html'">
+            Projects
           </div>
-          <div class="flexchild navHover">
-            <a href="contact.html">Contact</a>
+          <div class="flexchild navHover" onclick="location.href='contact.html'">
+            Contact
           </div>
-          <div class="flexchild navHover">
-            <a href="feedback.html">Feedback</a>
+          <div class="flexchild navHover" onclick="location.href='games.html'">
+            Games
           </div>
         </div>
       </header>
       <br>
-      <p class="coloredAndSize">
-        My name is Morgan Larson, and this is my portfolio website. I am continually working on this website as I learn more about programming, so check back in to see it develop!
-        Feel free to have a look around at the other tabs.
-      </p>
-      <table>
-        <tr>
-          <td>
+      <div class="contentCardParent">
+        <div class="contentCardChild textblock">
+            My name is Morgan Larson, and this is my portfolio website. I am continually working on this website as I learn more about programming, so check back in to see it develop!
+            Feel free to have a look around at the other tabs.
+            <br><br>
+            Interesting Articles in Software:
             <ul>
-              <li>Webpage #2: <a href="coolStuff.html">Click here!</a></li>
-              <li id="listStyle">Item 2</li>
-              <li>Click here for quiz 2 results: <a href="feedback.html">feedback form</a></li>
+              <li>
+                <a href="https://medium.com/alan/5-articles-every-software-engineer-should-read-56b0d9de2c43" target="_blank">5 Articles Every Software Engineer Should Read</a>
+              </li>
+              <li>
+                <a href="https://medium.com/alan/5-articles-every-software-engineer-should-read-56b0d9de2c43" target="_blank">5 Articles Every Software Engineer Should Read</a>
+              </li>
+              <li>
+                <a href="https://medium.com/alan/5-articles-every-software-engineer-should-read-56b0d9de2c43" target="_blank">5 Articles Every Software Engineer Should Read</a>
+              </li>
+              <li>
+                <a href="https://medium.com/alan/5-articles-every-software-engineer-should-read-56b0d9de2c43" target="_blank">5 Articles Every Software Engineer Should Read</a>
+              </li>
+              <li>
+                <a href="https://medium.com/alan/5-articles-every-software-engineer-should-read-56b0d9de2c43" target="_blank">5 Articles Every Software Engineer Should Read</a>
+              </li>
+              <li>
+                <a href="https://medium.com/alan/5-articles-every-software-engineer-should-read-56b0d9de2c43" target="_blank">5 Articles Every Software Engineer Should Read</a>
+              </li>
             </ul>
-          </td>
-        </tr>
-      </table> 
-      <br><br>
-      <div class="responsiveImage">
-        <img id="cutePuppy" src="./images/cute puppy.jpeg" alt="Cute Puppy" width="400" height="400">
+        </div>
       </div>
-      <br><br>
+      <div class="contentCardParent">
+        <div class="contentCardChild textblock">
+          Testing out another card
+          <br><br>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc rhoncus nec velit vitae mattis. Aenean quis lorem at augue egestas congue vitae eu tortor. Morbi pulvinar, libero vitae pharetra dignissim, est purus aliquam mauris, quis dapibus nisi elit a nulla. Nunc lacinia purus ultricies, consectetur sem at, dictum lorem. Donec fringilla lorem sed tempus porta. Vivamus a nibh velit. Phasellus non imperdiet ex, eget finibus nibh. Vestibulum elit sapien, hendrerit non venenatis et, elementum sed justo. Duis tincidunt feugiat dignissim. Integer dictum velit eros, et dignissim justo bibendum eget. Ut nibh turpis, vulputate sit amet mauris nec, pulvinar ullamcorper diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus dui, aliquam id convallis et, ornare ac justo. Donec blandit at nulla sit amet dignissim.
+
+Nunc eu nunc dignissim, tincidunt nisl vel, luctus elit. Sed ullamcorper nisl mauris, nec aliquet velit porttitor nec. Quisque fringilla dui et maximus tempor. Sed varius massa sit amet maximus suscipit. Praesent metus ante, scelerisque a cursus sed, mollis nec tellus. Pellentesque dictum metus ante, ultrices mattis tortor bibendum a. Quisque eu lorem sem. Nam et arcu placerat, placerat lacus in, sodales odio. Vestibulum ornare lacinia sem a sagittis. Quisque sit amet efficitur quam.
+
+Curabitur ultricies, sem nec lacinia auctor, nulla dui tincidunt nibh, ut lobortis purus dui eget nisi. Ut consequat tortor sed malesuada fermentum. Donec et ultrices leo, id egestas diam. Suspendisse potenti. Suspendisse convallis maximus justo, molestie lobortis ligula posuere at. In nunc ante, sodales ac neque vitae, elementum vehicula purus. Suspendisse gravida purus lacinia, tincidunt tortor non, congue felis. Aenean ultrices, nulla egestas molestie pharetra, diam erat pharetra neque, eget varius turpis mauris eu magna. Pellentesque tincidunt scelerisque tortor, at sagittis nisi accumsan ut. Donec ligula nisi, pulvinar ac nunc quis, suscipit sodales nibh. Fusce nibh tortor, tincidunt ac tempor id, consectetur accumsan diam.
+
+Donec aliquet ultrices sem non posuere. In odio neque, faucibus ut semper et, luctus non est. Nunc quis turpis diam. Proin posuere justo arcu, eu tempor justo congue ut. Nulla ac laoreet lorem. Etiam finibus sodales urna quis vulputate. Aenean mollis eu libero et sollicitudin. Nunc fermentum nisi nec sagittis vestibulum. Cras et lacus convallis, ornare magna at, sollicitudin mauris. Donec mauris eros, scelerisque non feugiat quis, tincidunt quis mi. Duis feugiat, justo eu gravida placerat, arcu magna euismod libero, vitae mattis tortor massa vitae nunc.
+        </div>
+      </div>
     </div>
   </body>
 </html>

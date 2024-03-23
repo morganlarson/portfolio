@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Quiz #1</title>
+    <title>Website Feedback</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <style>
       table {
@@ -28,72 +28,79 @@
   <body>
     <div class="inner_flex">
       <header>
-      <h1>Morgan Larson's Portfolio</h1>
-      <div class="flexparent">
-        <div class="flexchild navHover">
-          <a href="index.html">Home</a>
+        <h1>Morgan Larson's Portfolio</h1>
+        <div class="flexparent">
+          <div class="flexchild navHover" onclick="location.href='index.html'">
+            Home
+          </div>
+          <div class="flexchild navHover" onclick="location.href='aboutme.html'">
+            About Me
+          </div>
+          <div class="flexchild navHover" onclick="location.href='projects.html'">
+            Projects
+          </div>
+          <div class="flexchild navHover" onclick="location.href='contact.html'">
+            Contact
+          </div>
+          <div class="flexchild navHover" onclick="location.href='games.html'">
+            Gameboard
+          </div>
+          <div class="flexchild navHover" onclick="location.href='feedback.html'">
+            Feedback
+          </div>
         </div>
-        <div class="flexchild navHover">
-          <a href="aboutme.html">About Me</a>
+      </header>
+    <div class="contentCardParent">
+      <div class="contentCardChild">
+        <div class="textblock announcement">
+          Currently, this page is just a filler feedback page for your favorite dessert. In the near future,
+          this page will be used for feedback on features I should add to this portfolio website.
         </div>
-        <div class="flexchild navHover">
-          <a href="projects.html">Projects</a>
-        </div>
-        <div class="flexchild navHover">
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="flexchild navHover">
-          <a href="feedback.html">Feedback</a>
+        <form>
+          <table>
+            <tr>
+              <td>
+                <label for="favDessert">Favorite Dessert:</label>
+              </td>
+              <td>
+                <input type="text" id="favDessert" name="favDessert">
+              </td>
+            </tr>
+            <!-- <br> -->
+            <tr>
+              <td>
+                <label for="timeForDessert">Best time for Dessert:</label>
+              </td>
+              <td>
+                <select name="timeForDessert" text="Morning">
+                  <option>Breakfast</option>
+                  <option>Lunch</option>
+                  <option>Dinner</option>
+                </select>    
+              </td>
+            </tr>
+            
+            <!-- <br> -->
+            <tr>
+              <td>
+                <label for="bestPlaceToBuyDessert">Where is the best place to buy dessert?</label>
+              </td>
+              <td>
+                <textarea name="bestPlaceToBuyDessert" rows="6" cols="35"></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="submit" id="submitBtn" class="button" value="Submit Feedback">
+              </td>
+              <td>
+                <input type="reset" id="resetBtn" class="button" value="Reset Form">
+              </td>
+            </tr>
+          </table>
+        </form>
         </div>
       </div>
-    </header>
-    <div class="textblock announcement">
-      Currently, this page is just a filler feedback page for your favorite dessert. In the near future,
-      this page will be used for feedback on features I should add to this portfolio website.
-    </div>
-    <form>
-      <table>
-        <tr>
-          <td>
-            <label for="favDessert">Favorite Dessert:</label>
-          </td>
-          <td>
-            <input type="text" id="favDessert" name="favDessert">
-          </td>
-        </tr>
-        <!-- <br> -->
-        <tr>
-          <td>
-            <label for="timeForDessert">Best time for Dessert:</label>
-          </td>
-          <td>
-            <select name="timeForDessert" text="Morning">
-              <option>Breakfast</option>
-              <option>Lunch</option>
-              <option>Dinner</option>
-            </select>    
-          </td>
-        </tr>
-        
-        <!-- <br> -->
-        <tr>
-          <td>
-            <label for="bestPlaceToBuyDessert">Where is the best place to buy dessert?</label>
-          </td>
-          <td>
-            <textarea name="bestPlaceToBuyDessert" rows="6" cols="35"></textarea>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <input type="submit" id="submitBtn" class="button" value="Submit Feedback">
-          </td>
-          <td>
-            <input type="reset" id="resetBtn" class="button" value="Reset Form">
-          </td>
-        </tr>
-      </table>
-    </form>
     </div>
   </body>
 </html>

@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Morgan Larson's Portfolio</title>
+    <title>Morgan's Projects</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <meta name="viewport" content="width=device-width">
     <style>
       a#github {
         color: grey;
@@ -10,35 +11,37 @@
     </style>
   </head>
   <body>
-    <!-- this paragraph shows inheritance by being grey, which it inherited from style.css -->
     <div class="inner_flex">
       <header>
         <h1>Morgan Larson's Portfolio</h1>
         <div class="flexparent">
-          <div class="flexchild navHover">
-            <a href="index.html">Home</a>
+          <div class="flexchild navHover" onclick="location.href='index.html'">
+            Home
           </div>
-          <div class="flexchild navHover">
-            <a href="aboutme.html">About Me</a>
+          <div class="flexchild navHover" onclick="location.href='aboutme.html'">
+            About Me
           </div>
-          <div class="flexchild navHover">
-            <a href="projects.html">Projects</a>
+          <div class="flexchild navHover" onclick="location.href='projects.html'">
+            Projects
           </div>
-          <div class="flexchild navHover">
-            <a href="contact.html">Contact</a>
+          <div class="flexchild navHover" onclick="location.href='contact.html'">
+            Contact
           </div>
-          <div class="flexchild navHover">
-            <a href="feedback.html">Feedback</a>
+          <div class="flexchild navHover" onclick="location.href='games.html'">
+            Games
           </div>
         </div>
       </header>
-      <div class="textblock">
-        Check out my github! My username is morganlarson, but click <a id="github" href="https://github.com/morganlarson" target="_blank" rel="noopener noreferrer">here</a> to be brought right to it!
-        <br><br>
-        My resume is shown below:
-      </div>
-      <div class="resume">
-        <iframe src="./files/Official Resume (2).pdf" width="50%" height="100%"></iframe>
+      <div class="contentCardParent">
+        <div class="contentCardChild textblock">
+            Check out my github! My username is morganlarson, but click <a id="github" href="https://github.com/morganlarson" target="_blank" rel="noopener noreferrer">here</a> to be brought right to it!
+            <br><br>
+            My resume is shown below:
+            <br><br>
+          <div class="resume">
+            <iframe src="./files/Official Resume (2).pdf" width="100%" min-height="100%"></iframe>
+          </div>
+        </div>
       </div>
     </div>
   </body>

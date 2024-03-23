@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Morgan Larson's Portfolio</title>
+    <title>Contact Morgan</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
       .card-container {
         perspective: 1000px;
-        width: 600px;
-        height: 300px;
+        /* width: 100%; */
+        width: 700px;
+        height: 400px;
       }
   
       .card {
@@ -32,48 +34,58 @@
         justify-content: center;
         align-items: center;
         font-size: 18px;
-        font-weight: bold;
       }
   
       .front {
-        border: 1px solid black;
+        /* border: 1px solid black; */
+        width: 100%;
+        height: 100%;
         background-color: white;
         color: black;
         border-radius: 5px;
       }
 
       .back {
+        width: 100%;
+        height: 100%;
         border: 1px solid black;
-        background-color: lightpink;
-        color: #fff;
+        background-color: white;
+        color: black;
         transform: rotateY(180deg);
         border-radius: 5px;
+        font-weight: normal;
       }
 
-      p {
-        background-color: inherit;
+      textarea {
+        resize: none;
+      }
+
+      label#missingInfo {
+        color: red;
+        font-size: small;
       }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <div class="inner_flex">
       <header>
         <h1>Morgan Larson's Portfolio</h1>
         <div class="flexparent">
-          <div class="flexchild navHover">
-            <a href="index.html">Home</a>
+          <div class="flexchild navHover" onclick="location.href='index.html'">
+            Home
           </div>
-          <div class="flexchild navHover">
-            <a href="aboutme.html">About Me</a>
+          <div class="flexchild navHover" onclick="location.href='aboutme.html'">
+            About Me
           </div>
-          <div class="flexchild navHover">
-            <a href="projects.html">Projects</a>
+          <div class="flexchild navHover" onclick="location.href='projects.html'">
+            Projects
           </div>
-          <div class="flexchild navHover">
-            <a href="contact.html">Contact</a>
+          <div class="flexchild navHover" onclick="location.href='contact.html'">
+            Contact
           </div>
-          <div class="flexchild navHover">
-            <a href="feedback.html">Feedback</a>
+          <div class="flexchild navHover" onclick="location.href='games.html'">
+            Games
           </div>
         </div>
       </header>
@@ -83,24 +95,45 @@
           <div class="card">
             <div class="card-face front">
               <p class="textblock">
-                Morgan Larson
-                <br><br>
                 <i>Software Engineer 1</i>
                 <br><br>
-                Flip this over to contact me!
+                Flip this over to contact me.
               </p>
             </div>
             <div class="card-face back">
-              <p>Name: John Doe</p>
-              <p>Email: john.doe@example.com</p>
-              <p>Phone: +1 123-456-7890</p>
+              <form id="contactForm">
+                <label for="contactNameInput">Name *</label>
+                <br>
+                <input type="text" id="contactNameInput" name="contactNameInput"></input>
+                <br><br>
+                <label for="contactMessageInput">Message *</label>
+                <br>
+                <textarea id="contactMessageInput" name="contactMessageInput" rows="6" cols="35"></textarea>
+                <br><br>
+                <label for="contactPreference">Choose your preferred contact method *</label>
+                <br>
+                <select id="contactPreference" name="contactPreference">
+                  <option value="--select--">--select--</option>
+                  <option value="email">Email</option>
+                  <option value="cell">Cell</option>
+                  <option value="workPhone">Work Phone</option>
+                  <option value="homePhone">Home Phone</option>
+                  <option value="noContact">I don't want to be contacted</option>
+                </select>
+                <br><br>
+                <label hidden id="enterContactMethodLabel" for="enterContactMethodInput">Enter your contact information</label>
+                <br>
+                <input hidden type="text" id="enterContactMethodInput" name="enterContactMethodInput"></input>
+                <br><br>
+                <label id="missingInfo"></label>
+                <input type="button" id="contactFormSubmit" value="Submit">
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <div class="textblock">
-        <div>Enter your information below to contact me about software engineering services.</div>
-      </div>
     </div>
+
+    <script src="./app.js"></script>
   </body>
 </html>

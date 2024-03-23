@@ -1,13 +1,21 @@
-@media screen and (width<500px) {
+@media screen and (width<600px) {
   .flexparent {
     flex-direction: column;
   }
 }
 
-@media screen and (width<900px) {
-  img#cutePuppy {
-    width: 200px;
-    height: 200px;
+@media screen and (width<700px) {
+  .card-container {
+    width: 350px;
+    height: 650px;
+  }
+  
+
+}
+
+@media screen and (width<500px) {
+  h1 {
+    font-size: 24px;
   }
 }
 
@@ -17,12 +25,13 @@ body {
   display: flex;
   justify-content: center;
   margin: 0;
+  background-color: #333;
+  padding-bottom: 30px;
 }
 
 table, td {
   border: 1px solid black;
   border-collapse: collapse;
-  /* padding: 10px; */
   align-self: center;
 }
 
@@ -35,43 +44,40 @@ header {
 }
 
 p {
-  background-color: gainsboro;
   width: fit-content;
   padding: 10px;
   align-self: center;
 }
 
 ul li {
+  list-style-type: none;
   font-style: italic;
   font-size: medium;
-}
-
-li#listStyle {
-  color: lightblue;
-  font-weight: bolder;
+  padding: 3px;
 }
 
 .flexparent {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .flexchild {
   flex: 1;
   border: 1px;
+  border-radius: 5px;
   color: white;
   border-color: white;
   text-align: center;
 }
 
 a {
-  color: white;
   text-decoration: none;
 }
 
 .navHover:hover {
-  /* color: black; */
   background-color: lightgray;
+  cursor: pointer;
 }
 
 .inner_flex {
@@ -79,9 +85,18 @@ a {
   flex-direction: column;
 }
 
-.coloredAndSize {
-  background-color: lightpink;
-  max-width: 60vw;
+.contentCardParent {
+  display: flex;
+  justify-content: center;
+  min-width: 50%;
+  max-width: 60%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+.contentCardChild {
+  background-color: white;
+  border-radius: 10px;
 }
 
 .textblock {
@@ -97,8 +112,8 @@ form {
   padding: 10px 30px;
 }
 
-img.aboutmeImages {
-  max-width: 400px;
+.responsive {
+  max-width: 100%;
   height: auto;
 }
 
@@ -110,6 +125,21 @@ img.aboutmeImages {
 .resume {
   display: flex;
   justify-content: center;
-  min-width: 100vw;
-  min-height: 100vh;
+  /* min-width: 100vw; */
+  min-height: 70vh;
+}
+
+.checked {
+  color: orange;
+}
+
+input#contactFormSubmit {
+  float: right;
+  border: none;
+  border-radius: 5px;
+  background-color: #04AA6D;
+  color: white;
+  padding: 7px 14px;
+  text-decoration: none;
+  cursor: pointer;
 }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Morgan's Games</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <meta name="viewport" content="width=device-width">
+    <style>
+      table tr td {
+        border: none;
+        /* padding: 30px;
+        display: flex;
+        justify-content: center; */
+      }
+      img:hover {
+        cursor: pointer;
+      }
+      a {
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="inner_flex">
+      <header>
+        <h1>Morgan Larson's Portfolio</h1>
+        <div class="flexparent">
+          <div class="flexchild navHover" onclick="location.href='index.html'">
+            Home
+          </div>
+          <div class="flexchild navHover" onclick="location.href='aboutme.html'">
+            About Me
+          </div>
+          <div class="flexchild navHover" onclick="location.href='projects.html'">
+            Projects
+          </div>
+          <div class="flexchild navHover" onclick="location.href='contact.html'">
+            Contact
+          </div>
+          <div class="flexchild navHover" onclick="location.href='games.html'">
+            Games
+          </div>
+        </div>
+      </header>
+      <br>
+      <div class="contentCardParent">
+        <div class="contentCardChild">
+          <table>
+            <tr>
+              <td class="textblock" colspan="3"><strong>Favorite New York Times Games</strong></td>
+            </tr>
+            <tr>
+              <td>
+                <img class="responsive" id="wordle" src="./images/wordle.webp" alt="Wordle" width="200px" height="auto" onclick="window.location.href='https://www.nytimes.com/games/wordle';">
+              </td>
+              <td>
+                <img class="responsive" id="miniCrossword" src="./images/crossword.webp" alt="Mini Crossword" width="200px" height="auto" onclick="window.location.href='https://www.nytimes.com/crosswords/game/mini?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav';">
+              </td>
+              <td>
+                <img class="responsive" id="connections" src="./images/connections.webp" alt="Connections" width="200px" height="auto" onclick="window.location.href='https://www.nytimes.com/games/connections';">
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="contentCardParent">
+        <div class="contentCardChild">
+          <table>
+            <tr>
+              <td class="textblock" colspan="3"><strong>My Games</strong></td>
+            </tr>
+            <tr>
+              <!-- <td class="textblock">Whac-A-Mole</td> -->
+              <td class="textblock"><a href="./games/guess.html">Number Guess</a></td>
+              <!-- <td class="textblock">Find the Nyan Cat</td> -->
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
