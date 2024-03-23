@@ -6,8 +6,10 @@ const previousResult = document.querySelector(".lastResult");
 const lowOrHigh = document.querySelector(".lowOrHi");
 const guessSubmitBtn = document.querySelector(".guessSubmit");
 const guessField = document.querySelector(".guessField");
+const newGameButton = document.querySelector(".newGame");
 
 guessSubmitBtn.onclick = (e) => {
+  console.log(numberToGuess)
   var numberGuessed = parseInt(guessField.value);
 
   if (isNaN(numberGuessed)) {
@@ -32,11 +34,15 @@ guessSubmitBtn.onclick = (e) => {
     if (numberGuessed == numberToGuess) {
       previousResult.textContent = "Congratulations!";
       lowOrHigh.textContent = "";
+      guessSubmitBtn.disabled = true;
+      guessSubmitBtn.style.background = "lightgrey"
+      newGameButton.removeAttribute("hidden")
     } else if (guessCount > 10) {
       previousResult.textContent = "Too many guesses - Game Over!";
       lowOrHigh.textContent = "";
       guessSubmitBtn.disabled = true;
       guessSubmitBtn.style.background = "lightgrey"
+      newGameButton.removeAttribute("hidden")
     } else {
       previousResult.textContent = "Wrong!";
       if (numberGuessed < numberToGuess) {
@@ -46,4 +52,15 @@ guessSubmitBtn.onclick = (e) => {
       }
     }
   }
+}
+
+newGameButton.onclick = (e) => {
+  numberToGuess = Math.floor(Math.random() * 100) + 1;
+  guessCount = 1;
+  guessSubmitBtn.disabled = false;
+  guessSubmitBtn.style.background = "#04AA6D"
+  guessField.value = "";
+  previousResult.textContent = "";
+  previousGuesses.textContent = "";
+  newGameButton.setAttribute("hidden", "")
 }

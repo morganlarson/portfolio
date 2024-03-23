@@ -6,14 +6,13 @@
     <link rel="stylesheet" type="text/css" href="../css/style.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <meta name="viewport" content="width=device-width">
-    <style>  
-        .lastResult {
-          padding: 3px;
-        }
-      </style>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    </head>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      .newGame {
+        float: left;
+      }
+    </style>
+  </head>
   <body>
       <div class="innerFlex">
         <header>
@@ -53,9 +52,11 @@
               <p class="lastResult"></p>
               <p class="lowOrHi"></p>
             </div>
+
+            <input hidden type="button" value="New Game" class="newGame submitBtn">
           </div>
         </div>
       </div>
-      <script src="./guess.js"></script>
+    <script src="./guess.js"></script>
   </body>
 </html>
