@@ -33,6 +33,8 @@ header {
   padding: 1rem;
   min-width: 100vw;
   text-align: center;
+  position: sticky;
+  top: 0;
 }
 
 p {
