@@ -6,6 +6,14 @@ const enterContactMethodInput = document.querySelector("#enterContactMethodInput
 const contactFormSubmitButton = document.querySelector("#contactFormSubmit");
 const missingInfoLabel = document.querySelector("#missingInfo");
 
+const modeToggles = document.querySelectorAll('.modeToggle');
+
+modeToggles.forEach((item) => {
+  item.addEventListener('change', () => {
+    document.body.classList.toggle('light-mode');
+  });
+});
+
 contactPreference.onchange = (e) => {
   var chosenContactMethod = e.target.value;
   
