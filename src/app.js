@@ -14,6 +14,28 @@ modeToggles.forEach((item) => {
   });
 });
 
+function fetchRandomQuote() {
+  fetch('./quotes.json')
+      .then(response => response.json())
+      .then(data => {
+          const quotes = data.quotes;
+          const randomIndex = Math.floor(Math.random() * quotes.length);
+          const randomQuote = quotes[randomIndex];
+          displayQuote(randomQuote);
+      })
+      .catch(error => console.error('Error fetching quotes:', error));
+}
+
+
+function displayQuote(quote) {
+  const quoteCard = document.getElementById('quoteCard');
+  quoteCard.innerHTML = `<p>Random Quote:</p><blockquote>${quote}</blockquote>`;
+}
+
+// Call fetchRandomQuote function when the page loads
+window.addEventListener('load', fetchRandomQuote);
+
+
 contactPreference.onchange = (e) => {
   var chosenContactMethod = e.target.value;
   

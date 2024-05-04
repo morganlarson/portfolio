@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Find the Hidden Picture Game</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  <style>
+    p {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    
+    .hidden-picture {
+      display: none; /* Initially hide the hidden picture */
+      position: absolute; /* Position the hidden picture absolutely */
+    }
+  </style>
+</head>
+<body>
+  <div class="innerFlex">
+    <header>
+      <h1>Morgan Larson's Portfolio</h1>
+      <div class="flexparent">
+        <div class="flexchild navHover" onclick="window.location.href='../index.html'">
+          Home
+        </div>
+        <div class="flexchild navHover" onclick="location.href='../aboutme.html'">
+          About Me
+        </div>
+        <div class="flexchild navHover" onclick="location.href='../projects.html'">
+          Projects
+        </div>
+        <div class="flexchild navHover" onclick="location.href='../contact.html'">
+          Contact
+        </div>
+        <div class="flexchild navHover" onclick="location.href='../games.html'">
+          Games
+        </div>
+        <div class="flexchild">
+          <label class="switch">
+            <input type="checkbox" class="modeToggle">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </header>
+    <div class="contentCardParent">
+      <div class="contentCardChild">
+        <p>The Nyan Cat is hiding somewhere on this page below this text block. Click around to find it!</p>
+        <!-- Hidden picture (Nyan Cat) -->
+        <!-- <img src="../images/Nyan-Cat-PNG-Transparent.webp" class="hidden-picture" id="nyan-cat"> -->
+      </div>
+    </div>
+    <!-- <div class="contentCardParent">
+      <div class="contentCardChild"> -->
+      <p>Mode: <button id="difficulty" onclick="setDifficulty()">simple</button></p>
+    
+      <h2>Your score:</h2>
+      <h2 id="score">0</h2>
+    
+      <h2>Time Left:</h2>
+      <h2 id="time-left">60</h2>
+    
+      <div class="grid">
+        <div class="square" id="1"></div>
+        <div class="square" id="2"></div>
+        <div class="square" id="3"></div>
+        <div class="square" id="4"></div>
+        <div class="square" id="5"></div>
+        <div class="square" id="6"></div>
+        <div class="square" id="7"></div>
+        <div class="square" id="8"></div>
+        <div class="square" id="9"></div>
+      </div>
+    <!-- </div>
+    </div> -->
+
+
+  </div>
+  <script src="../app.js"></script>
+  <script src="./findNyanCat.js"></script>
+</body>
+</html>
