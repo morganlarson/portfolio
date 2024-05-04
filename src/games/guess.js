@@ -7,6 +7,7 @@ const lowOrHigh = document.querySelector(".lowOrHi");
 const guessSubmitBtn = document.querySelector(".guessSubmit");
 const guessField = document.querySelector(".guessField");
 const newGameButton = document.querySelector(".newGame");
+const jsConfetti = new JSConfetti();
 
 guessSubmitBtn.onclick = (e) => {
   console.log(numberToGuess)
@@ -34,6 +35,7 @@ guessSubmitBtn.onclick = (e) => {
     if (numberGuessed == numberToGuess) {
       previousResult.textContent = "Congratulations!";
       lowOrHigh.textContent = "";
+      jsConfetti.addConfetti()
       guessSubmitBtn.disabled = true;
       guessSubmitBtn.style.background = "lightgrey"
       newGameButton.removeAttribute("hidden")

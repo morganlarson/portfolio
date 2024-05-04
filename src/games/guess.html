@@ -7,9 +7,15 @@
     <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
     <meta name="viewport" content="width=device-width">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
     <style>
       .newGame {
         float: left;
+      }
+
+      canvas {
+        height: 0;
+        width: 0;
       }
     </style>
   </head>
@@ -41,6 +47,7 @@
             </div>
           </div>
         </header>
+        <canvas id="confetti"></canvas>
         <div class="contentCardParent">
           <div class="contentCardChild textblock">
             <h1>Number guessing game</h1>
