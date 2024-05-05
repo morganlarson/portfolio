@@ -6,10 +6,19 @@
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
     <meta name="viewport" content="width=device-width">
     <style>
+      header {
+        z-index: 1;
+      }
+      
+      .text {
+        color: black;
+        text-align: left;
+      }
+      
       .card-container {
         perspective: 1000px;
         width: 700px;
-        height: 400px;
+        height: 500px;
       }
   
       .card {
@@ -67,7 +76,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
-    <div class="innerFlex">
+    <div id="pageParent" class="innerFlex">
       <header>
         <h1>Morgan Larson's Portfolio</h1>
         <div class="flexparent">
@@ -95,7 +104,7 @@
         </div>
       </header>
       <br><br>
-      <div class="flexparent">
+      <div id="contactCardParent" class="flexparent">
         <div class="card-container">
           <div class="card">
             <div class="card-face front">
@@ -110,6 +119,11 @@
                 <label for="contactNameInput">Name *</label>
                 <br>
                 <input type="text" id="contactNameInput" name="contactNameInput"></input>
+                <br><br>
+                <input type="radio" id="review" name="formatChoice" value="Review">
+                <label for="review">Review</label>
+                <input type="radio" id="contact" name="formatChoice" value="Contact">
+                <label for="contact">Contact</label>
                 <br><br>
                 <label for="contactMessageInput">Message *</label>
                 <br>
@@ -137,7 +151,8 @@
           </div>
         </div>
       </div>
+      <!-- reviews should be added here -->
     </div>
-    <script src="./app.js"></script>
+    <script src="./app.js" defer></script>
   </body>
 </html>

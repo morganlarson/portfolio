@@ -4,6 +4,8 @@ const contactPreference = document.querySelector("#contactPreference");
 const enterContactMethodLabel = document.querySelector("#enterContactMethodLabel");
 const enterContactMethodInput = document.querySelector("#enterContactMethodInput");
 const contactFormSubmitButton = document.querySelector("#contactFormSubmit");
+const contactCardReviewFormat = document.querySelector("#review");
+const contactCardContactFormat = document.querySelector("#contact");
 const missingInfoLabel = document.querySelector("#missingInfo");
 
 // Light/Dark Mode Toggle
@@ -68,9 +70,13 @@ contactFormSubmitButton.onclick = (e) => {
   const contactMessageValue = contactMessageInput.value;
   const contactPreferenceValue = contactPreference.value;
   const contactMethodValue = enterContactMethodInput.value;
+  const contactCardReviewFormatValue = contactCardReviewFormat.checked;
+  const contactCardContactFormatValue = contactCardContactFormat.checked;
 
   if (contactNameValue == "") {
     missingInfoLabel.textContent = "Please enter a name.";
+  } else if (contactCardReviewFormatValue == "" && contactCardContactFormatValue == "") {
+    missingInfoLabel.textContent = "Please choose a format: review or contact.";
   } else if (contactMessageValue == "") {
     missingInfoLabel.textContent = "Please enter a message.";
   } else if (contactPreferenceValue == "" || contactPreferenceValue == "--select--") {
@@ -78,6 +84,26 @@ contactFormSubmitButton.onclick = (e) => {
   } else if (contactPreferenceValue != "noContact" && contactMethodValue == "") {
     missingInfoLabel.textContent = "Please enter your contact information.";
   } else {
+    if (contactCardReviewFormatValue) {
+      const contentCardParent = document.createElement('div');
+      const contentCardChild = document.createElement('div');
+            
+      contentCardParent.classList.add('contentCardParent');
+      contentCardChild.classList.add('contentCardChild');
+      contentCardChild.classList.add('textblock');
+
+      contentCardChild.textContent = "\"" + contactMessageValue + "\"\n - " + contactNameValue;
+
+      contentCardParent.appendChild(contentCardChild);
+
+      const existingDiv = document.getElementById('pageParent');
+      existingDiv.appendChild(contentCardParent);
+    }
+    // else if (contactCardContactFormatValue) {
+      // contact only
+
+    // }
+
     missingInfoLabel.textContent = "";
     clearValues();
     Swal.fire({
@@ -93,4 +119,6 @@ function clearValues() {
   contactMessageInput.value = "";
   contactPreference.value = "";
   enterContactMethodInput.value = "";
+  contactCardReviewFormat.checked = false;
+  contactCardContactFormat.checked = false;
 }
