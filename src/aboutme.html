@@ -5,38 +5,98 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <style>
+      /* Add this CSS for the timeline section */
+      header {
+        z-index: 1;
+      }
+
+      .timeline {
+        list-style: none;
+        padding: 20px 0;
+        position: relative;
+        flex-direction: column;
+      }
+
+      .timeline-card {
+        max-width: 50%;
+        left: 50%;
+      }
+
+      .timeline:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #ccc;
+        left: 50%;
+        margin-left: -1px;
+        z-index: -1;
+      }
+
+      .timeline-item {
+        margin-bottom: 20px;
+        position: relative;
+        left: 0;
+        display: flex;
+        align-items: center;
+        min-width: -webkit-fill-available;
+        padding-left: 26%
+      }
+
+      .timeline-year {
+        width: 80px;
+        height: 80px;
+        background-color: gray;
+        color: white;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 75px;
+        font-weight: bold;
+        margin-right: 20px;
+      }
+
+      .timeline-content p {
+        margin: 0;
+        background-color: white;
+        border-radius: 10px;
+        color: black;
+        max-width: 450px;
+      }
+    </style>
   </head>
   <body>
     <div class="innerFlex">
       <header>
-        <h1>Morgan Larson's Portfolio</h1>
-        <div class="flexparent">
-          <div class="flexchild navHover" onclick="location.href='index.html'">
-            Home
+          <h1>Morgan Larson's Portfolio</h1>
+          <div class="flexparent">
+              <div class="flexchild navHover" onclick="location.href='index.html'">
+                  Home
+              </div>
+              <div class="flexchild navHover" onclick="location.href='aboutme.html'">
+                  About Me
+              </div>
+              <div class="flexchild navHover" onclick="location.href='projects.html'">
+                  Projects
+              </div>
+              <div class="flexchild navHover" onclick="location.href='contact.html'">
+                  Contact
+              </div>
+              <div class="flexchild navHover" onclick="location.href='games.html'">
+                  Games
+              </div>
+              <div class="flexchild">
+                  <label class="switch">
+                      <input type="checkbox" class="modeToggle">
+                      <span class="slider round"></span>
+                  </label>
+              </div>
           </div>
-          <div class="flexchild navHover" onclick="location.href='aboutme.html'">
-            About Me
-          </div>
-          <div class="flexchild navHover" onclick="location.href='projects.html'">
-            Projects
-          </div>
-          <div class="flexchild navHover" onclick="location.href='contact.html'">
-            Contact
-          </div>
-          <div class="flexchild navHover" onclick="location.href='games.html'">
-            Games
-          </div>
-          <div class="flexchild">
-            <label class="switch">
-              <input type="checkbox" class="modeToggle">
-              <span class="slider round"></span>
-            </label>
-          </div>
-        </div>
       </header>
       <div class="contentCardParent">
         <div class="contentCardChild textblock">
-          My name is Morgan, as you may have already figured out. 
+          My name is Morgan, as you may have already figured out.
           <br><br>
           I'm originally from New Prague, Minnesota, but I'm currently living in Lincoln, Nebraska for school. I actually graduate this
           spring, in May 2024, which is really exciting! After I graduate, I will be going on a 6 week trip through various
@@ -65,6 +125,53 @@
             <div class="flexchild">
               <img class="responsive" src="./images/Lower-and-Middle-Falls-Gooseberry-Falls-State-Park-MN-Edward-Lee.jpg" alt="Gooseberry Falls" width="300px" height="auto">
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline flexparent">
+        <div class="timeline-item flexchild">
+          <div class="timeline-year">2018</div>
+          <div class="timeline-content textblock">
+            <p>Learned JavaScript in "Intro to Computer Science" during fall semester junior year of high school.</p>
+          </div>
+        </div>
+        <div class="timeline-item flexchild">
+          <div class="timeline-year">2019</div>
+          <div class="timeline-content textblock">
+            <p>Learned Java in "AP Computer Science" during senior year of high school.</p>
+          </div>
+        </div>
+        <div class="timeline-item flexchild">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content textblock">
+            <p>Started Software Engineering degree at the University of Nebraska-Lincoln.</p>
+          </div>
+        </div>
+        <div class="timeline-item flexchild">
+          <div class="timeline-year">2021</div>
+          <div class="timeline-content textblock">
+            <p>Started at Sandhills Global as a Software Engineering Intern.</p>
+          </div>
+        </div>
+        <div class="timeline-item flexchild">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content textblock">
+            <p>Studied abroad with the Science and Engineering Research Program in Hannover, Germany where I created an Excel Macro to read and organize data.</p>
+          </div>
+        </div>
+        <div class="timeline-item flexchild">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-content textblock">
+            <p>Started a summer Software Engineering internship at Garmin in Kansas City where I worked as a full-stack engineer in the Device Interaction Department.</p>
+            <br>
+            <p>Accepted a full-time offer from Garmin for Software Engineer 1 in the Aviation department.</p>
+          </div>
+        </div>
+        <div class="timeline-item flexchild">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-content textblock">
+            <p>Graduated from the University of Nebraska-Lincoln with a Bachelors of Science in Software Engineering.</p>
           </div>
         </div>
       </div>
