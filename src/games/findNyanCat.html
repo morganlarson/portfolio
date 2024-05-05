@@ -13,10 +13,59 @@
       padding-left: 30px;
       padding-right: 30px;
     }
+
+    canvas {
+      height: 0;
+      width: 0;
+    }
     
-    .hidden-picture {
-      display: none; /* Initially hide the hidden picture */
-      position: absolute; /* Position the hidden picture absolutely */
+    .newGame {
+        float: left;
+        margin-bottom: 30px;
+        margin-left: 30px;
+      }
+
+    .scene {
+      display: inline-block;
+      width: 100px;
+      height: 160px;
+      margin: 40px 0;
+      perspective: 600px;
+    }
+
+    .card {
+      /* position: relative; */
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      transform-origin: center right;
+      transition: transform 0s;
+    }
+
+    .card.is-flipped {
+      transform: translateX(-100%) rotateY(-180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      /* line-height: 260px; */
+      color: white;
+      text-align: center;
+      font-weight: bold;
+      font-size: 40px;
+      backface-visibility: hidden;
+    }
+
+    .front {
+      background: #ccc;
+    }
+
+    .back {
+      background: #ccc;
+      transform: rotateY(180deg);
     }
   </style>
 </head>
@@ -48,38 +97,49 @@
         </div>
       </div>
     </header>
+    
+    <canvas id="confetti"></canvas>
+
     <div class="contentCardParent">
       <div class="contentCardChild">
-        <p>The Nyan Cat is hiding somewhere on this page below this text block. Click around to find it!</p>
-        <!-- Hidden picture (Nyan Cat) -->
-        <!-- <img src="../images/Nyan-Cat-PNG-Transparent.webp" class="hidden-picture" id="nyan-cat"> -->
+        <p>The Nyan Cat is hiding below behind one of the cards. Click around to find it!</p>
+        <div class="textblock">
+          <div class="scene">
+            <div class="card">
+              <div class="card-face front"></div>
+              <div class="card-face back"></div>
+            </div>
+          </div>
+          <div class="scene">
+            <div class="card">
+              <div class="card-face front"></div>
+              <div class="card-face back"></div>
+            </div>
+          </div>
+          <div class="scene">
+            <div class="card">
+              <div class="card-face front"></div>
+              <div class="card-face back"></div>
+            </div>
+          </div>
+          <div class="scene">
+            <div class="card">
+              <div class="card-face front"></div>
+              <div class="card-face back"></div>
+            </div>
+          </div>
+          <div class="scene">
+            <div class="card">
+              <div class="card-face front"></div>
+              <div class="card-face back"></div>
+            </div>
+          </div>
+        </div>
+        <input hidden type="button" value="New Game" class="newGame submitBtn">
+
+
       </div>
     </div>
-    <!-- <div class="contentCardParent">
-      <div class="contentCardChild"> -->
-      <p>Mode: <button id="difficulty" onclick="setDifficulty()">simple</button></p>
-    
-      <h2>Your score:</h2>
-      <h2 id="score">0</h2>
-    
-      <h2>Time Left:</h2>
-      <h2 id="time-left">60</h2>
-    
-      <div class="grid">
-        <div class="square" id="1"></div>
-        <div class="square" id="2"></div>
-        <div class="square" id="3"></div>
-        <div class="square" id="4"></div>
-        <div class="square" id="5"></div>
-        <div class="square" id="6"></div>
-        <div class="square" id="7"></div>
-        <div class="square" id="8"></div>
-        <div class="square" id="9"></div>
-      </div>
-    <!-- </div>
-    </div> -->
-
-
   </div>
   <script src="../app.js"></script>
   <script src="./findNyanCat.js"></script>

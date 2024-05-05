@@ -1,67 +1,40 @@
-const squares = document.querySelectorAll('.square')
-const mole = document.querySelector('.mole')
-const timeLeft = document.querySelector('#time-left')
-const score = document.querySelector('#score')
-const difficultyLevel = document.querySelector("#difficulty")
+var cards = document.querySelectorAll('.card');
+var imageCounter = 0;
+var nyanCatCard = Math.floor(Math.random() * 5);
+const jsConfetti = new JSConfetti();
+const newGameButton = document.querySelector(".newGame");
 
-let result = 0
-let hitPosition
-let currentTime = 60
-let timerId = null
+populateCards();
 
-function randomSquare() {
-  squares.forEach(square => {
-    square.classList.remove('mole')
-  })
-
-  let randomSquare = squares[Math.floor(Math.random() * 9)]
-  randomSquare.classList.add('mole')
-
-  hitPosition = randomSquare.id
-}
-
-squares.forEach(square => {
-  square.addEventListener('mousedown', () => {
-    if (square.id == hitPosition) {
-      result++
-      score.textContent = result
-      hitPosition = null
+function populateCards() {
+  cards.forEach((card) => {
+    var cardBack = card.childNodes[3];
+    if (imageCounter == nyanCatCard) {
+      cardBack.innerHTML = `<img class="nyanCat" src="../images/nyan-cat.png" style="padding-top:30px;" width="100px" height="auto" alt="Mole">`;
+    } else {
+      cardBack.innerHTML = `<img class="wrong" src="../images/Red_X.svg.png" style="padding-top:50px;" width="75px" height="auto" alt="Wrong!">`;
     }
-  })
-})
-
-function moveMole() {
-  timerId = setInterval(randomSquare, 500)
+    imageCounter++;
+    
+    card.addEventListener( 'click', function() {
+      card.classList.toggle('is-flipped');
+      card.style.pointerEvents = "none";
+      if (cardBack.childNodes[0].classList.contains("nyanCat")) {
+        success();
+      }
+    });
+  });
 }
 
-moveMole()
-
-function setDifficulty() {
-  var difficultyTextContent = difficultyLevel.textContent
-  clearInterval(timerId)
-
-  if (difficultyTextContent == "simple") {
-    //mode is currently hard, change to simple
-    timerId = setInterval(randomSquare, 1000)
-    difficultyLevel.textContent = "hard"
-  } else {
-    //mode is currently simple, change to hard
-    timerId = setInterval(randomSquare, 500)
-    difficultyLevel.textContent = "simple"
-  }
+function success() {
+  jsConfetti.addConfetti();
+  cards.forEach((card) => {
+    card.style.pointerEvents = "none";
+  });
+  newGameButton.removeAttribute("hidden")
 }
 
-function countDown() {
- currentTime--
- timeLeft.textContent = currentTime
-
- if (currentTime == 0) {
-   clearInterval(countDownTimerId)
-   clearInterval(timerId)
-   alert('GAME OVER! Your final score is ' + result)
- }
-
+newGameButton.onclick = (e) => {
+  location.reload();
+  newGameButton.setAttribute("hidden", "")
 }
-
-let countDownTimerId = setInterval(countDown, 1000)
-

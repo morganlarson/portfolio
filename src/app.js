@@ -6,6 +6,7 @@ const enterContactMethodInput = document.querySelector("#enterContactMethodInput
 const contactFormSubmitButton = document.querySelector("#contactFormSubmit");
 const missingInfoLabel = document.querySelector("#missingInfo");
 
+// Light/Dark Mode Toggle
 const modeToggles = document.querySelectorAll('.modeToggle');
 
 modeToggles.forEach((item) => {
@@ -14,6 +15,7 @@ modeToggles.forEach((item) => {
   });
 });
 
+// Random Quotes
 function fetchRandomQuote() {
   fetch('./quotes.json')
       .then(response => response.json())
@@ -26,16 +28,15 @@ function fetchRandomQuote() {
       .catch(error => console.error('Error fetching quotes:', error));
 }
 
-
 function displayQuote(quote) {
   const quoteCard = document.getElementById('quoteCard');
   quoteCard.innerHTML = `<p>Random Quote:</p><blockquote>${quote}</blockquote>`;
 }
 
-// Call fetchRandomQuote function when the page loads
 window.addEventListener('load', fetchRandomQuote);
 
 
+// Contact Preference
 contactPreference.onchange = (e) => {
   var chosenContactMethod = e.target.value;
   
