@@ -7,11 +7,9 @@ const PORT = process.env.PORT || 5500;
 
 app.use(bodyParser.json());
 
-// Endpoint to handle submitting reviews
 app.post('/submit-review', (req, res) => {
   const newReview = req.body;
 
-  // Read existing reviews from JSON file
   fs.readFile('reviews.json', 'utf8', (err, data) => {
     if (err) {
       console.error('Error reading file:', err);
@@ -28,10 +26,8 @@ app.post('/submit-review', (req, res) => {
       return;
     }
 
-    // Add new review to the array
     reviews.push(newReview);
 
-    // Write updated reviews back to JSON file
     fs.writeFile('reviews.json', JSON.stringify({ reviews }, null, 2), 'utf8', (err) => {
       if (err) {
         console.error('Error writing to file:', err);

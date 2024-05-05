@@ -8,9 +8,6 @@ const contactCardReviewFormat = document.querySelector("#review");
 const contactCardContactFormat = document.querySelector("#contact");
 const missingInfoLabel = document.querySelector("#missingInfo");
 
-// Contact Preference
-// on window load, get all reviews from review.json and populate contact.html
-
 window.addEventListener('load', fetchReviews);
 
 function fetchReviews() {
@@ -53,11 +50,9 @@ function updateReviews(review) {
   });
 }
 
-// To access the stars
 let stars = document.getElementsByClassName("star");
 let starsRating = 0;
 
-// Function to update rating
 function rating(n) {
 	remove();
 	for (let i = 0; i < n; i++) {
@@ -71,7 +66,6 @@ function rating(n) {
   starsRating = n;
 }
 
-// To remove the pre-applied styling
 function remove() {
 	let i = 0;
 	while (i < 5) {
@@ -79,7 +73,6 @@ function remove() {
 		i++;
 	}
 }
-
 
 contactPreference.onchange = (e) => {
   var chosenContactMethod = e.target.value;
@@ -127,7 +120,6 @@ contactFormSubmitButton.onclick = (e) => {
     missingInfoLabel.textContent = "Please enter your contact information.";
   } else {
     if (contactCardReviewFormatValue) {
-      // save review to review.json and then show it under contact card
       var review = {
         name: contactNameValue,
         message: contactMessageValue,
@@ -138,10 +130,6 @@ contactFormSubmitButton.onclick = (e) => {
       updateReviews(review);
       displayReview(contactMessageValue, contactNameValue);
     }
-    // else if (contactCardContactFormatValue) {
-      // contact only, save review to contact.json
-
-    // }
 
     missingInfoLabel.textContent = "";
     clearValues();
