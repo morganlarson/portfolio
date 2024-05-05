@@ -1,0 +1,28 @@
+{
+  "reviews": [
+    {"name": "Madison",
+      "message": "This is a great site!",
+      "preference": "email",
+      "method": "larsomad@gmail.com",
+      "stars": 5
+    },
+    {"name": "Alexa",
+      "message": "Great work, Morgan",
+      "preference": "email",
+      "method": "alama@gmail.com",
+      "stars": 5
+    },
+    {"name": "Joe",
+      "message": "I really like the style",
+      "preference": "email",
+      "method": "jdoe@gmail.com",
+      "stars": 4
+    },
+    {"name": "Mr. Smith",
+      "message": "Keep it up!",
+      "preference": "email",
+      "method": "msmith@gmail.com",
+      "stars": 4
+    }
+  ]
+}

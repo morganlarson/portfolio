@@ -8,37 +8,79 @@ const contactCardReviewFormat = document.querySelector("#review");
 const contactCardContactFormat = document.querySelector("#contact");
 const missingInfoLabel = document.querySelector("#missingInfo");
 
-// Light/Dark Mode Toggle
-const modeToggles = document.querySelectorAll('.modeToggle');
+// Contact Preference
+// on window load, get all reviews from review.json and populate contact.html
 
-modeToggles.forEach((item) => {
-  item.addEventListener('change', () => {
-    document.body.classList.toggle('light-mode');
-  });
-});
+window.addEventListener('load', fetchReviews);
 
-// Random Quotes
-function fetchRandomQuote() {
-  fetch('./quotes.json')
+function fetchReviews() {
+  var overallStarRating = 0;
+  let output = document.getElementById("output");
+  fetch('./data/reviews.json')
       .then(response => response.json())
       .then(data => {
-          const quotes = data.quotes;
-          const randomIndex = Math.floor(Math.random() * quotes.length);
-          const randomQuote = quotes[randomIndex];
-          displayQuote(randomQuote);
+          const reviews = data.reviews;
+          for (let i = 0; i < reviews.length; i++) {
+            displayReview(reviews[i].message, reviews[i].name);
+            overallStarRating += reviews[i].stars;
+          }
+          overallStarRating = overallStarRating / reviews.length;
+          updateStars(overallStarRating)
       })
-      .catch(error => console.error('Error fetching quotes:', error));
+      .catch(error => console.error('Error fetching reviews:', error));
 }
 
-function displayQuote(quote) {
-  const quoteCard = document.getElementById('quoteCard');
-  quoteCard.innerHTML = `<p>Random Quote:</p><blockquote>${quote}</blockquote>`;
+function updateStars(overallStarRating) {
+  output.innerText = "Rating is: " + overallStarRating + "/5";
 }
 
-window.addEventListener('load', fetchRandomQuote);
+function updateReviews(review) {
+  fetch('/submit-review', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(review)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Failed to submit review');
+    }
+    console.log('Review submitted successfully!');
+  })
+  .catch(error => {
+    console.error('Error submitting review:', error);
+  });
+}
+
+// To access the stars
+let stars = document.getElementsByClassName("star");
+let starsRating = 0;
+
+// Function to update rating
+function rating(n) {
+	remove();
+	for (let i = 0; i < n; i++) {
+		if (n == 1) cls = "one";
+		else if (n == 2) cls = "two";
+		else if (n == 3) cls = "three";
+		else if (n == 4) cls = "four";
+		else if (n == 5) cls = "five";
+		stars[i].className = "star " + cls;
+	}
+  starsRating = n;
+}
+
+// To remove the pre-applied styling
+function remove() {
+	let i = 0;
+	while (i < 5) {
+		stars[i].className = "star";
+		i++;
+	}
+}
 
 
-// Contact Preference
 contactPreference.onchange = (e) => {
   var chosenContactMethod = e.target.value;
   
@@ -85,22 +127,19 @@ contactFormSubmitButton.onclick = (e) => {
     missingInfoLabel.textContent = "Please enter your contact information.";
   } else {
     if (contactCardReviewFormatValue) {
-      const contentCardParent = document.createElement('div');
-      const contentCardChild = document.createElement('div');
-            
-      contentCardParent.classList.add('contentCardParent');
-      contentCardChild.classList.add('contentCardChild');
-      contentCardChild.classList.add('textblock');
-
-      contentCardChild.textContent = "\"" + contactMessageValue + "\"\n - " + contactNameValue;
-
-      contentCardParent.appendChild(contentCardChild);
-
-      const existingDiv = document.getElementById('pageParent');
-      existingDiv.appendChild(contentCardParent);
+      // save review to review.json and then show it under contact card
+      var review = {
+        name: contactNameValue,
+        message: contactMessageValue,
+        preference: contactPreferenceValue,
+        method: contactMethodValue,
+        stars: starsRating
+      };
+      updateReviews(review);
+      displayReview(contactMessageValue, contactNameValue);
     }
     // else if (contactCardContactFormatValue) {
-      // contact only
+      // contact only, save review to contact.json
 
     // }
 
@@ -112,6 +151,22 @@ contactFormSubmitButton.onclick = (e) => {
       text: "Submission successful"
     });
   }
+}
+
+function displayReview(contactMessageValue, contactNameValue) {
+  const contentCardParent = document.createElement('div');
+  const contentCardChild = document.createElement('div');
+        
+  contentCardParent.classList.add('contentCardParent');
+  contentCardChild.classList.add('contentCardChild');
+  contentCardChild.classList.add('textblock');
+
+  contentCardChild.textContent = "\"" + contactMessageValue + "\"\n - " + contactNameValue;
+
+  contentCardParent.appendChild(contentCardChild);
+
+  const existingDiv = document.getElementById('pageParent');
+  existingDiv.appendChild(contentCardParent);
 }
 
 function clearValues() {

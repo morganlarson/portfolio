@@ -72,6 +72,61 @@
       .submitBtn {
         float: right;
       }
+
+      /* style.css */
+
+      /* * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      } */
+
+      /* body {
+      min-height: 50vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      background: hsl(137, 46%, 24%);
+      font-family: "Poppins", sans-serif;
+      } */
+
+      /* .card {
+      max-width: 33rem;
+      background: #fff;
+      margin: 0 1rem;
+      padding: 1rem;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      border-radius: 0.5rem;
+      } */
+
+      .star {
+      font-size: 4vh;
+      cursor: pointer;
+      }
+
+      .one {
+      color: rgb(255, 0, 0);
+      }
+
+      .two {
+      color: rgb(255, 106, 0);
+      }
+
+      .three {
+      color: rgb(251, 255, 120);
+      }
+
+      .four {
+      color: rgb(255, 255, 0);
+      }
+
+      .five {
+      color: rgb(24, 159, 14);
+      }
+
+
     </style>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
@@ -128,7 +183,13 @@
                 <label for="contactMessageInput">Message *</label>
                 <br>
                 <textarea id="contactMessageInput" name="contactMessageInput" rows="6" cols="35"></textarea>
-                <br><br>
+                <br>
+                <span onclick="rating(1)" class="star">★</span>
+                <span onclick="rating(2)" class="star">★</span>
+                <span onclick="rating(3)" class="star">★</span>
+                <span onclick="rating(4)" class="star">★</span>
+                <span onclick="rating(5)" class="star">★</span>
+                <br>
                 <label for="contactPreference">Choose your preferred contact method *</label>
                 <br>
                 <select id="contactPreference" name="contactPreference">
@@ -151,8 +212,16 @@
           </div>
         </div>
       </div>
+      <div class="contentCardParent">
+        <div class="contentCardChild textblock">
+          <h3 id="output">
+            Website Rating is: 0/5
+        </h3>
+        </div>
+      </div>
+      
       <!-- reviews should be added here -->
     </div>
-    <script src="./app.js" defer></script>
+    <script src="./javascript/contact.js" defer></script>
   </body>
 </html>
