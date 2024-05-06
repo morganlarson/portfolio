@@ -7,6 +7,7 @@ modeToggles.forEach((item) => {
   });
 });
 
+
 // Random Quotes
 function fetchRandomQuote() {
   fetch('./data/quotes.json')

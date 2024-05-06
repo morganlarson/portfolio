@@ -61,7 +61,7 @@ function rating(n) {
 		else if (n == 3) cls = "three";
 		else if (n == 4) cls = "four";
 		else if (n == 5) cls = "five";
-		stars[i].className = "star " + cls;
+		stars[i].className = "star fa-solid fa-star " + cls;
 	}
   starsRating = n;
 }
@@ -69,7 +69,7 @@ function rating(n) {
 function remove() {
 	let i = 0;
 	while (i < 5) {
-		stars[i].className = "star";
+		stars[i].className = "star fa-solid fa-star";
 		i++;
 	}
 }
@@ -164,4 +164,5 @@ function clearValues() {
   enterContactMethodInput.value = "";
   contactCardReviewFormat.checked = false;
   contactCardContactFormat.checked = false;
+  remove();
 }
