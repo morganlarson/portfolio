@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "1.0.0",
+  "type": "commonjs",
   "description": "Ideas for enhancement: - games page   - number guessing   - wordle?   - links to fav games",
   "main": "src/server.js",
   "scripts": {
@@ -9,6 +10,7 @@
   "author": "Morgan Larson",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7"
   }
 }
